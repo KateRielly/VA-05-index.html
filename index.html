@@ -3,110 +3,154 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Congressional App Challenge Showcase | #HouseOfCode</title>
-  <meta name="description" content="Congress named nearly 400 winning teams from all 50 states during the 2025 Congressional App Challenge. See their apps and watch live demos at the U.S. Capitol on April 22, 2026.">
-  <meta property="og:title" content="Congressional App Challenge Showcase | Virtual #HouseOfCode Demos">
-  <meta property="og:description" content="Congress named nearly 400 winning teams from all 50 states during the 2025 Congressional App Challenge. Explore their projects and watch live demos at the U.S. Capitol.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://hackclub.github.io/Congressional-Showcase/">
-  <meta property="og:site_name" content="Congressional App Challenge Showcase">
-  <meta property="og:image" content="https://hackclub.github.io/Congressional-Showcase/assets/images/og-default.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Congressional App Challenge Showcase | Virtual #HouseOfCode Demos">
-  <meta name="twitter:description" content="Congress named nearly 400 winning teams from all 50 states during the 2025 Congressional App Challenge. Explore their projects and watch live demos at the U.S. Capitol.">
-  <meta name="twitter:image" content="https://hackclub.github.io/Congressional-Showcase/assets/images/og-default.png">
-  <link rel="canonical" href="https://hackclub.github.io/Congressional-Showcase/">
-  <link rel="manifest" href="manifest.json">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "name": "Congressional App Challenge Showcase",
-        "url": "https://hackclub.github.io/Congressional-Showcase/",
-        "description": "A showcase of apps built by high schoolers for the Congressional App Challenge — #HouseOfCode"
-      },
-      {
-        "@type": "Organization",
-        "name": "Hack Club",
-        "url": "https://hackclub.com",
-        "logo": "https://assets.hackclub.com/icon-rounded.png"
-      },
-      {
-        "@type": "Event",
-        "name": "Congressional App Challenge Showcase at the U.S. Capitol",
-        "startDate": "2026-04-22",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "eventStatus": "https://schema.org/EventScheduled",
-        "location": {
-          "@type": "Place",
-          "name": "U.S. Capitol",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Washington",
-            "addressRegion": "DC",
-            "addressCountry": "US"
-          }
-        },
-        "description": "Nearly 400 winning teams from all 50 states demonstrate their apps live at the U.S. Capitol.",
-        "organizer": {
-          "@type": "Organization",
-          "name": "Congressional App Challenge",
-          "url": "https://www.congressionalappchallenge.us"
-        }
-      }
-    ]
-  }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="https://assets.hackclub.com/icon-rounded.png" type="image/png">
-  <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+  <title>Clubba Hubba | Kate Reilly</title>
+
+  <!-- Shared styles — gives you navigation arrows and CAC CSS variables -->
+   <!-- added some font libraries too -->
+  <link rel="stylesheet" href="../../assets/css/shared.css">
+  <link href="https://googleapis.com" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/cooper-hewitt" rel="stylesheet">
+
+
+
+  <style>
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* blobs */
+    #metaball-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1; /* sits behind everything */
+    }
+
+    body {
+      position: relative;
+      font-family: 'PT Sans', sans-serif;
+      color: #ffffff;
+      background: #021232;
+      min-height: 100vh;
+      font-size: 15px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 0px 10vw 0px 10vw;
+      align-items: center;
+    }
+
+    header { 
+      text-align: center; 
+      padding-top: 5rem;
+      display: flex;
+      flex-direction: column; 
+      min-height: 175px;
+    }
+
+    header h1 {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 800;
+      font-size: 7vh;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+      white-space: wrap;
+    }
+
+    header p {
+      font-size: 17.5px;
+      font-family: 'Cooper Hewitt', sans-serif;
+      color: white;
+      display: inline-block;
+      white-space: wrap;
+    }
+
+    section {
+      color: black;
+      background: rgba(252, 250, 255, 0.878);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0px 6px 10px rgba(245, 220, 255, 0.344);
+    }
+
+    h2 { font-family: 'Open Sans', sans-serif;font-weight: 800; font-size: 3.5vh; margin-bottom: 1rem; }
+    p { line-height: 1.7; margin-bottom: 1rem; color: #140136ef;}
+
+    .video iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: none;
+      border-radius: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+
+    a {
+      color: rgb(161, 0, 37);
+    }
+
+    footer p { color: #d3cbdb; font-weight: 500; font-size: 2.2vh;}
+  </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="hero-logos">
-      <img src="https://assets.hackclub.com/flag-orpheus-top.svg" alt="Hack Club" class="hero-logo">
-      <span class="hero-logo-separator">&times;</span>
-      <img src="https://cdn.hackclub.com/019ce382-fe8e-7efa-a987-b937435e489b/logolight-vector.svg" alt="House of Code" class="hero-logo">
-    </div>
-    <h1>Congressional App Challenge Showcase</h1>
-    <p class="tagline">Virtual #HouseOfCode Demos</p>
-    <p class="subtitle">Congress named nearly 400 winning teams from all 50 states during the 2025 Congressional App Challenge and those winning students will be demonstrating their apps live at the U.S. Capitol on April 22, 2026. Ready to see what they created? Click a pin on the map to explore their projects.</p>
-    <div class="hero-actions">
-      <a href="https://github.com/hackclub/Congressional-Showcase/blob/main/README.md#add-your-project" class="hero-btn">Add Your Project</a>
-      <a href="sites/example/" class="hero-btn">Example Page</a>
-      <button id="random-project" class="hero-btn" onclick="goToRandomProject()">View Random Project</button>
-    </div>
-  </header>
 
-  <div class="map-header">Explore Projects Across the Country</div>
-  <section id="map">
-    <div id="map-container"></div>
-  </section>
+  <div class="container">
+    <header>
+      <h1>Kate Reilly</h1>
+      <p>Winner of the 2025 Congressional App Challenge for Virginia’s Fifth District!</p>
+    </header>
+
+    <section>
+      <h2>About Me</h2>
+      <p>I am a senior at St. Anne's-Belfield. I got into coding thanks to my dad's recommendation to try it out freshman year, and quickly came to enjoy it! Outside of school I am an eagle scout and enjoy running, lacrosse, and polo. I am also a twin and have three dogs.</p>
+    </section>
+
+    <section>
+      <h2>Club Hub</h2>
+      <p>This website started out as a class project under the original name Clubba Hubba. It is designed to help student clubs at my school improve their outreach and planning within our school community. Three of the main things the website does is allow club leaders to create a club page, compete to get the most points (earned by having meetings and high attendance), and schedule meetings that will then be displayed on the website's calendar. There are also various other things including a page for the dean of students and other site administrators, however, these pages are not accessible to general users</p>
+      <p>Club Hub was built with HTML, Javascript, and CSS</p>
+    </section>
+
+    <section class="video">
+
+      <h2>Demo Video</h2>
+      <iframe
+        src="https://www.youtube.com/embed/jg01qCalN20?si=2CHocOT1BLQH-14d"
+        title="App Demo Video"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </section>
+
+    <section>
+      <!-- TODO: Add any relevant links -->
+      <h2>Links</h2>
+      <p>
+        <!-- Back button — links to the main showcase -->
+        <a href="https://congressional-showcase.hackclub.com/" class="back-to-showcase">Back to Showcase</a> &bull;
+        <a href="https://github.com/yourusername/yourrepo">GitHub</a> &bull;
+        <a href="https://st-anne-s-belfield-school.github.io/clubhub/">Live App</a>
+      </p>
+    </section>
+  </div>
 
   <footer>
-    <p>Use <kbd>&larr;</kbd> <kbd>&rarr;</kbd> arrow keys to browse projects. Press <kbd>Esc</kbd> to return here.</p>
-    <p>Built with <span style="color: #e05555">&hearts;</span> by <a href="https://github.com/claynicholson">Clay Nicholson</a></p>
-    <p>follow me for a cookie</p>
+    <p>᪥   Congressional App Challenge   ᪥</p>
   </footer>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="assets/js/map.js"></script>
-  <script src="assets/js/nav.js" data-root="./"></script>
-  <script>
-    function goToRandomProject() {
-      fetch('./projects.json')
-        .then(function(r) { return r.json(); })
-        .then(function(p) {
-          if (p.length === 0) return;
-          var pick = p[Math.floor(Math.random() * p.length)];
-          window.location.href = 'sites/' + pick.slug + '/';
-        });
-    }
-  </script>
+  <!-- Navigation script — enables arrow key navigation. Do NOT remove this. -->
+  <script src="../../assets/js/nav.js" data-root="../../"></script>
+
+  <!-- Typewriter animation script — loaded from script.js -->
+  <script src="script.js"></script>
 </body>
 </html>
