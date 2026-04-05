@@ -1,17 +1,15 @@
-[
-  {
-    "slug": "IA-03",
-    "name": "Joey Zambreno",
-    "appName": "IAHeroes",
-    "description": "IAHeroes is a comprehensive digital archive where veterans, their families, and community members can submit, explore, and interact with veteran stories, creating a lasting legacy for future generations.",
-    "thumbnail": "sites/IA-03/thumbnail.png",
-    "location": {
-      "lat": 41.586834,
-      "lng": -93.624962,
-      "label": "Des Moines, IA"
-    },
-    "district": "IA-03",
-    "state": "IA",
-    "tags": ["veterans", "education", "community"]
-  }
-]
+{
+  "slug": "VA-05",
+  "name": "Kate Reilly",
+  "appName": "Club Hub",
+  "description": "This app helps with student clubs!",
+  "thumbnail": "sites/VA-05/thumbnail.png",
+  "location": {
+    "lat": 38.031052,
+    "lng": -78.474159,
+    "label": "Charlottesville, VA"
+  },
+  "district": "VA-05",
+  "state": "VA",
+  "tags": ["education", "Student-life", "hobies", "scheduling", "social", "outreach"]
+}
